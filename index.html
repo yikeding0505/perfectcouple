@@ -30,7 +30,7 @@
 <body>
 
     <h1>网络一线牵，姓名缘分测试（菁菁lie特别版）</h1>
-    <p>以下测试结果具有极高的准确性，请尊重科学</p>
+    <p>输入两个人的姓名，点击“测试”查看结果</p>
 
     <input type="text" id="name1" placeholder="姓名1">
     <br>
@@ -42,11 +42,9 @@
 
     <script>
         function calculateMatch() {
-            // 获取输入的姓名，并转换为小写以进行不区分大小写的匹配
+            // 获取输入的姓名
             var name1 = document.getElementById("name1").value.trim();
             var name2 = document.getElementById("name2").value.trim();
-            var lowerName1 = name1.toLowerCase();
-            var lowerName2 = name2.toLowerCase();
 
             // 检查是否输入为空
             if (name1 === "" || name2 === "") {
@@ -54,7 +52,7 @@
                 return;
             }
 
-            // 匹配逻辑
+            // 处理特定的匹配逻辑
             if ((name1 === "钟菁" && name2 === "丁一柯") || (name1 === "丁一柯" && name2 === "钟菁")) {
                 document.getElementById("result").textContent = "相见恨晚，你们真是天造地设的一对呢！";
             } else if ((name1 === "主人" && name2 === "小狗") || (name1 === "小狗" && name2 === "主人")) {
@@ -68,21 +66,13 @@
                     document.getElementById("result").textContent = "你到底还想和谁在一起！我要吃醋了";
                 }
             } else if (name1 === "小狗" || name2 === "小狗") {
-                if (name1 !== "钟菁" && name2 !== "钟菁") {
-                    document.getElementById("result").textContent = "小狗是钟菁的";
+                if (name1 !== "主人" && name2 !== "主人") {
+                    document.getElementById("result").textContent = "小狗是主人的";
                 }
             } else if (name1 === "主人" || name2 === "主人") {
                 if (name1 !== "小狗" && name2 !== "小狗") {
                     document.getElementById("result").textContent = "请你再考虑一下，这下要大吃醋了！";
                 }
-            } else if ((name1 === "钟菁" && name2 === "胡骁") || (name1 === "胡骁" && name2 === "钟菁")) {
-                document.getElementById("result").textContent = "这时候搜前夫哥就不礼貌了";
-            } else if ((lowerName1 === "aten" && name2 === "钟菁") || (name1 === "钟菁" && lowerName2 === "aten")) {
-                document.getElementById("result").textContent = "看！又给我抓到了吧，要我多吃醋你才满意！";
-            } else if (lowerName1.includes("菁菁lie") || lowerName2.includes("菁菁lie")) {
-                document.getElementById("result").textContent = "请实名冲浪";
-            } else if ((lowerName1 === "呜呜姐" || lowerName2 === "呜呜姐") || (lowerName1 === "呜呜" && lowerName2 === "孙琳") || (lowerName1 === "孙琳" && lowerName2 === "呜呜") || (lowerName1 === "小琳" && lowerName2 === "呜呜") || (lowerName1 === "呜呜" && lowerName2 === "小琳")) {
-                document.getElementById("result").textContent = "你俩把日子过好比什么都好";
             } else {
                 // 其他情况下显示的默认消息
                 document.getElementById("result").textContent = "自己都没谈上，你还管上别人了";
