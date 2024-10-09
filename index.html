@@ -70,6 +70,8 @@
                     document.getElementById("result").textContent = "这时候搜前夫哥就不礼貌了";
                 } else if ((name1 === "钟菁" && name2 === "小太阳") || (name1 === "小太阳" && name2 === "钟菁")) {
                     document.getElementById("result").textContent = "真没想到你连她都搜，想啥呢？";
+                } else if ((name1 === "钟菁" && (lowerName2 === "aten")) || ((lowerName1 === "aten") && name2 === "钟菁")) {
+                    document.getElementById("result").textContent = "赶紧截图给她，兑换嘉年华一个";
                 } else if ((name1 === "钟菁" && name2 === "孙琳") || (name1 === "孙琳" && name2 === "钟菁") || (name1 === "钟菁" && name2 === "小琳") || (name1 === "小琳" && name2 === "钟菁")) {
                     document.getElementById("result").textContent = "两个人都凑不到一个1干嘛呢这是";
                 } else if (name1 !== "丁一柯" && name2 !== "丁一柯") {
@@ -93,6 +95,8 @@
                 document.getElementById("result").textContent = "荧幕情侣别当真";
             } else if ((lowerName1 === "呜呜姐" || lowerName2 === "呜呜姐" || lowerName1 === "呜呜" || lowerName2 === "呜呜") && (lowerName1 === "孙琳" || lowerName2 === "孙琳" || lowerName1 === "小琳" || lowerName2 === "小琳")) {
                 document.getElementById("result").textContent = "你俩把日子过好比什么都好";
+            } else if ((name1 === "孙琳" || name1 === "小琳" || name2 === "孙琳" || name2 === "小琳") && (lowerName1 !== "呜呜" && lowerName1 !== "呜呜姐") && (lowerName2 !== "呜呜" && lowerName2 !== "呜呜姐")) {
+                document.getElementById("result").textContent = "吃着碗里看着锅里也不是好习惯哦";
             } else {
                 // 其他情况下显示的默认消息
                 document.getElementById("result").textContent = "自己都没谈上，你还管上别人了";
