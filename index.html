@@ -55,50 +55,57 @@
             }
 
             // 匹配逻辑
+            var resultMessage = "";  // 定义结果信息变量
+
             if ((name1 === "钟菁" && name2 === "丁一柯") || (name1 === "丁一柯" && name2 === "钟菁")) {
-                document.getElementById("result").textContent = "相见恨晚，你们真是天造地设的一对呢！";
+                resultMessage = `${name1} 和 ${name2} 相见恨晚，你们真是天造地设的一对呢！`;
             } else if ((name1 === "主人" && name2 === "小狗") || (name1 === "小狗" && name2 === "主人")) {
-                document.getElementById("result").textContent = "我命令你们现在马上立刻在一起";
+                resultMessage = `${name1} 和 ${name2}：我命令你们现在马上立刻在一起！`;
             } else if (name1 === "丁一柯" || name2 === "丁一柯") {
                 if (name1 !== "钟菁" && name2 !== "钟菁") {
-                    document.getElementById("result").textContent = "想得美，丁一柯还是和钟菁一起比较搭";
+                    resultMessage = `${name1} 和 ${name2}：想得美，丁一柯还是和钟菁一起比较搭。`;
                 }
             } else if (name1 === "钟菁" || name2 === "钟菁") {
                 if ((name1 === "钟菁" && name2 === "胡骁") || (name1 === "胡骁" && name2 === "钟菁")) {
-                    document.getElementById("result").textContent = "经历错的人，才能遇到对的人";
+                    resultMessage = `经历错的人，才能遇到对的人。${name1} 现在品味比之前好多了。`;
                 } else if ((name1 === "钟菁" && name2 === "真真珑") || (name1 === "真真珑" && name2 === "钟菁")) {
-                    document.getElementById("result").textContent = "这时候搜前夫哥就不礼貌了";
+                    resultMessage = `${name1} 和 ${name2}：这时候搜前夫哥就不礼貌了。`;
                 } else if ((name1 === "钟菁" && name2 === "小太阳") || (name1 === "小太阳" && name2 === "钟菁")) {
-                    document.getElementById("result").textContent = "真没想到你连她都搜，想啥呢？";
+                    resultMessage = `${name1} 和 ${name2}：真没想到你连她都搜，想啥呢？`;
+                } else if ((name1 === "钟菁" && lowerName2 === "aten") || (lowerName1 === "aten" && name2 === "钟菁")) {
+                    resultMessage = `${name1} 和 ${name2}：果然，嘉年华还是有魅力的。`;
                 } else if ((name1 === "钟菁" && name2 === "孙琳") || (name1 === "孙琳" && name2 === "钟菁") || (name1 === "钟菁" && name2 === "小琳") || (name1 === "小琳" && name2 === "钟菁")) {
-                    document.getElementById("result").textContent = "两个人都凑不到一个1干嘛呢这是";
+                    resultMessage = `${name1} 和 ${name2}：两个人都凑不到一个1干嘛呢这是。`;
                 } else if (name1 !== "丁一柯" && name2 !== "丁一柯") {
-                    document.getElementById("result").textContent = "你到底还想和谁在一起！我要吃醋了";
+                    resultMessage = `${name1} 和 ${name2}：你到底还想和谁在一起！我要吃醋了。`;
                 }
             } else if (name1 === "小狗" || name2 === "小狗") {
                 if (name1 !== "钟菁" && name2 !== "钟菁") {
-                    document.getElementById("result").textContent = "小狗是钟菁的";
+                    resultMessage = `${name1} 和 ${name2}：小狗是钟菁的。`;
                 }
             } else if (name1 === "主人" || name2 === "主人") {
                 if (name1 !== "小狗" && name2 !== "小狗") {
-                    document.getElementById("result").textContent = "请你再考虑一下，这下要大吃醋了！";
+                    resultMessage = `${name1} 和 ${name2}：请你再考虑一下，这下要大吃醋了！`;
                 }
-            } else if ((lowerName1 === "aten" && name2 === "钟菁") || (name1 === "钟菁" && lowerName2 === "aten")) {
-                document.getElementById("result").textContent = "看！又给我抓到了吧，要我多吃醋你才满意！";
             } else if (lowerName1.includes("菁菁lie") || lowerName2.includes("菁菁lie")) {
-                document.getElementById("result").textContent = "请实名冲浪";
+                resultMessage = `请实名冲浪，${name1} 和 ${name2}`;
             } else if ((lowerName1 === "呜呜姐" || lowerName2 === "呜呜姐" || lowerName1 === "呜呜" || lowerName2 === "呜呜") && (lowerName1 !== "孙琳" && lowerName2 !== "孙琳") && (lowerName1 !== "小琳" && lowerName2 !== "小琳")) {
-                document.getElementById("result").textContent = "不长记性，活该被女人骗";
+                resultMessage = `${name1} 和 ${name2}：不长记性，活该被女人骗。`;
             } else if ((lowerName1 === "呜呜姐" || lowerName2 === "呜呜姐" || lowerName1 === "呜呜" || lowerName2 === "呜呜") && (lowerName1 === "钟菁" || lowerName2 === "钟菁")) {
-                document.getElementById("result").textContent = "荧幕情侣别当真";
+                resultMessage = `${name1} 和 ${name2}：荧幕情侣别当真。`;
             } else if ((lowerName1 === "呜呜姐" || lowerName2 === "呜呜姐" || lowerName1 === "呜呜" || lowerName2 === "呜呜") && (lowerName1 === "孙琳" || lowerName2 === "孙琳" || lowerName1 === "小琳" || lowerName2 === "小琳")) {
-                document.getElementById("result").textContent = "你俩把日子过好比什么都好";
+                resultMessage = `${name1} 和 ${name2}：你俩把日子过好比什么都好。`;
+            } else if ((name1 === "孙琳" || name1 === "小琳" || name2 === "孙琳" || name2 === "小琳") && (lowerName1 !== "呜呜" && lowerName1 !== "呜呜姐") && (lowerName2 !== "呜呜" && lowerName2 !== "呜呜姐")) {
+                resultMessage = `${name1} 和 ${name2}：吃着碗里看着锅里也不是好习惯哦。`;
             } else {
-                // 其他情况下显示的默认消息
-                document.getElementById("result").textContent = "自己都没谈上，你还管上别人了";
+                resultMessage = `${name1} 和 ${name2}：自己都没谈上，你还管上别人了。`;
             }
+
+            // 显示结果
+            document.getElementById("result").textContent = resultMessage;
         }
     </script>
 
 </body>
 </html>
+
