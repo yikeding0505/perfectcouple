@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>姓名配对测试</title>
+    <title>网络一线牵，姓名缘分测试（菁菁lie特别版）</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,7 +29,7 @@
 </head>
 <body>
 
-    <h1>姓名配对测试</h1>
+    <h1>网络一线牵，姓名缘分测试（菁菁lie特别版）</h1>
     <p>输入两个人的姓名，点击“测试”查看结果</p>
 
     <input type="text" id="name1" placeholder="姓名1">
@@ -52,14 +52,30 @@
                 return;
             }
 
-            // 特定条件显示自定义消息
+            // 处理特定的匹配逻辑
             if ((name1 === "钟菁" && name2 === "丁一柯") || (name1 === "丁一柯" && name2 === "钟菁")) {
                 document.getElementById("result").textContent = "相见恨晚，你们真是天造地设的一对呢！";
             } else if ((name1 === "主人" && name2 === "小狗") || (name1 === "小狗" && name2 === "主人")) {
                 document.getElementById("result").textContent = "我命令你们现在马上立刻在一起";
+            } else if (name1 === "丁一柯" || name2 === "丁一柯") {
+                if (name1 !== "钟菁" && name2 !== "钟菁") {
+                    document.getElementById("result").textContent = "想得美，丁一柯还是和钟菁一起比较搭";
+                }
+            } else if (name1 === "钟菁" || name2 === "钟菁") {
+                if (name1 !== "丁一柯" && name2 !== "丁一柯") {
+                    document.getElementById("result").textContent = "你到底还想和谁在一起！我要吃醋了";
+                }
+            } else if (name1 === "小狗" || name2 === "小狗") {
+                if (name1 !== "主人" && name2 !== "主人") {
+                    document.getElementById("result").textContent = "小狗是主人的";
+                }
+            } else if (name1 === "主人" || name2 === "主人") {
+                if (name1 !== "小狗" && name2 !== "小狗") {
+                    document.getElementById("result").textContent = "请你再考虑一下，这下要大吃醋了！";
+                }
             } else {
-                // 默认的配对分数100
-                document.getElementById("result").textContent = name1 + " 和 " + name2 + " 的配对分数是: 100 / 100";
+                // 其他情况下显示的默认消息
+                document.getElementById("result").textContent = "自己都没谈上，你还管上别人了";
             }
         }
     </script>
