@@ -84,9 +84,6 @@
             } else if (name1 === "主人" || name2 === "主人") {
                 if (name1 !== "小狗" && name2 !== "小狗") {
                     document.getElementById("result").textContent = "请你再考虑一下，这下要大吃醋了！";
-                }
-            } else if ((lowerName1 === "aten" && name2 === "钟菁") || (name1 === "钟菁" && lowerName2 === "aten")) {
-                document.getElementById("result").textContent = "看！又给我抓到了吧，要我多吃醋你才满意！";
             } else if (lowerName1.includes("菁菁lie") || lowerName2.includes("菁菁lie")) {
                 document.getElementById("result").textContent = "请实名冲浪";
             } else if ((lowerName1 === "呜呜姐" || lowerName2 === "呜呜姐" || lowerName1 === "呜呜" || lowerName2 === "呜呜") && (lowerName1 !== "孙琳" && lowerName2 !== "孙琳") && (lowerName1 !== "小琳" && lowerName2 !== "小琳")) {
